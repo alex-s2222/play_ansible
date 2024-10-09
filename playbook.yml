@@ -1,0 +1,16 @@
+--- 
+- name: Nxinx web server
+  hosts: all
+  remote_user: student
+  tasks:
+    - name: Installs nginx web web-servers
+      apt:
+        pkg: nginx
+        state: installed
+
+    - name: Push future default virtual host configuration 
+      copy:
+        src: files/site.conf
+        dest: /etc/nginx/conf.d/
+        mode: 0640
+      
