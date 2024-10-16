@@ -1,0 +1,17 @@
+--- 
+- name: Nxinx web server
+  hosts: all
+  tasks:
+    - name: Install nxing
+      become: true 
+      ansible.builtin.apt:
+        update-chache:yes
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+    - name: Install apache
+      become: true
+      apt: 
+        update-chache: yes
+        name: apache2
+        state: present 
