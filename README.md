@@ -18,7 +18,11 @@ ssh-copy-id {{user}}@{{host}}
 ```text
 ansible all -m setup -i inventory.ini 
 ```
-
+4. Запуск плейбука
 ```
 ansible-playbook playbook.yaml -i inventory.ini
+```
+
+```
+ansible-link playbook.yaml
 ```
