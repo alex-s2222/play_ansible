@@ -18,3 +18,7 @@ ssh-copy-id {{user}}@{{host}}
 ```text
 ansible all -m setup -i inventory.ini 
 ```
+
+```
+ansible-playbook playbook.yaml -i inventory.ini
+```
