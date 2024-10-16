@@ -11,7 +11,11 @@
       when: ansible.os_family == "Debian"
     - name: Install apache
       become: true
-      yum: 
+      # yum: неправильно
+      #   name: apache2
+      #   state: present 
+      # when: "ansible_facts['os_family']" == "RedHat"
+      ansible.builtin.yum: 
         name: apache2
         state: present 
-      when: "ansible_facts['os_family']" == "Debian"
+      when: "ansible_facts['os_family']" == "RedHat"
