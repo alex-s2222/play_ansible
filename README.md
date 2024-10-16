@@ -13,3 +13,8 @@ ssh-keygen -t rsa
 ```text
 ssh-copy-id {{user}}@{{host}}
 ```
+3. Получить Факты
+
+```text
+ansible all -m setup -i inventory.ini 
+```
