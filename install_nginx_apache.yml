@@ -2,20 +2,17 @@
 - name: Nxinx web server
   hosts: all
   tasks:
-    - name: Install nxing
+    - name: Install nxing and Apach
       become: true 
       ansible.builtin.apt:
-        update-chache:yes
+        update-chache: yes
         name: nginx
         state: present
       when: ansible.os_family == "Debian"
+
     - name: Install apache
       become: true
-      # yum: неправильно
-      #   name: apache2
-      #   state: present 
-      # when: "ansible_facts['os_family']" == "RedHat"
       ansible.builtin.yum: 
         name: apache2
         state: present 
-      when: "ansible_facts['os_family']" == "RedHat"
+      when: ansible.os_family == "RedHat"
