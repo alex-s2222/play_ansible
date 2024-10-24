@@ -1,0 +1,15 @@
+---
+- name: Install git 
+  become: true 
+  ansible.builtin.apt:
+    update-cache: true
+    name:
+      - git
+    state: present
+
+- name: Copy repo
+  ansible.builtin.git:
+    repo: 'https://github.com/alex-s2222/ParseBot'
+    dest: /tmp/parsebot
+
+      
