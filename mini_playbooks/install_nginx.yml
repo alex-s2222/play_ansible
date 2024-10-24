@@ -1,0 +1,15 @@
+--- 
+- name: Nxinx web server
+  hosts: all
+  tasks:
+    - name: Install Ubuntu
+      become: true 
+      # ansible.builtin.shell:
+      #   command:
+      ansible.builtin.apt:
+        update-chache: yes
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+      
+      
