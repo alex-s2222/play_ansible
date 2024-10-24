@@ -26,6 +26,15 @@ ansible all -m setup -i inventory.ini
 ansible-playbook playbook.yaml -i inventory.ini
 ```
 
+5. Проверка плейбука на правильность
+
 ```text
-ansible-link playbook.yaml
+ansible-lint playbook.yaml
+```
+
+
+6. Проверка
+
+```text
+ansible-galaxy init play_with_docker
 ```
