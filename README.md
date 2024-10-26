@@ -33,7 +33,7 @@ ansible-lint playbook.yaml
 ```
 
 
-6. Проверка
+6. Создание роли для ansible
 
 ```text
 ansible-galaxy init play_with_docker
