@@ -1,9 +1,9 @@
 ---
-- name: Install docker 
+- name: Install docker
   ansible.builtin.include_tasks:
     file: tasks/docker.yml
 
-- name: Work with repo 
+- name: Work with repo
   ansible.builtin.include_tasks:
     file: tasks/repo.yml
     

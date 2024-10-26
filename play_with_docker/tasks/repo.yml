@@ -1,6 +1,6 @@
 ---
-- name: Install git 
-  become: true 
+- name: Install git
+  become: true
   ansible.builtin.apt:
     update-cache: true
     name:
@@ -11,5 +11,3 @@
   ansible.builtin.git:
     repo: 'https://github.com/alex-s2222/ParseBot'
     dest: /tmp/parsebot
-
-      

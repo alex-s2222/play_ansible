@@ -44,4 +44,4 @@
     name: student
     groups:
       - docker
-    append: true 
+    append: true
