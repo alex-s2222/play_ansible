@@ -1,0 +1,33 @@
+---
+- name: Playbook для копирования, запуска скрипта, загрузки результата и удаления файлов с использованием переменных
+  hosts: your_target_server
+  vars:
+    local_python_file: "/local/path/to/your_script.py"
+    remote_python_file: "/remote/path/to/your_script.py"
+    remote_output_file: "/remote/path/to/output_file.txt"
+    local_output_file: "/local/path/to/output_file.txt"
+
+  tasks:
+    - name: Копирование Python файла на сервер
+      ansible.builtin.copy:
+        src: "{{ local_python_file }}"
+        dest: "{{ remote_python_file }}"
+
+    - name: Запуск скрипта и запись вывода в файл
+      ansible.builtin.shell: "python3 {{ remote_python_file }} > {{ remote_output_file }}"
+
+    - name: Скачать новый файл
+      ansible.builtin.fetch:
+        src: "{{ remote_output_file }}"
+        dest: "{{ local_output_file }}"
+        flat: yes
+
+    - name: Удалить Python файл с сервера
+      ansible.builtin.file:
+        path: "{{ remote_python_file }}"
+        state: absent
+
+    - name: Удалить файл с результатами на сервере
+      ansible.builtin.file:
+        path: "{{ remote_output_file }}"
+        state: absent
