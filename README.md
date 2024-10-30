@@ -38,3 +38,15 @@ ansible-lint playbook.yaml
 ```text
 ansible-galaxy init play_with_docker
 ```
+
+7. dns 
+```
+#где искать куда обращаться 
+/etc/resolv.conf
+
+#формат конфигурации
+/etc/netplan/50-cloud-init.yaml
+
+#что бы применить изменения
+sudo netplan try
+```
