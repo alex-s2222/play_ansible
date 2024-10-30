@@ -11,3 +11,13 @@
   ansible.builtin.git:
     repo: 'https://github.com/alex-s2222/ParseBot'
     dest: /tmp/parsebot
+    force: true
+
+- name: Copy template
+  ansible.builtin.template:
+    src: template.j2
+    dest: /tmp/parsebot/run_apps.yaml
+
+- name: Start docker compose
+  ansible.builtin.shell:
+    cmd: docker compose -f /tmp/parsebot/run_apps.yaml up --build
