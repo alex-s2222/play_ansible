@@ -1,2 +1,8 @@
 ---
 # vars file for play_with_docker
+var:
+  MONGO_USER: 'mongo'
+  MONGO_PASS: 'mongo'
+  TG_TOKEN: '7724915862:AAEMr5yTyivGgGCLwW6A6tsGMMIFvI91Hvg'
+  TG_TOKEN_2: '7996817886:AAFmoRLgNZPdtbnVO6sbVKW-4vBKoaWSIjs'
+  USER_ID: '1920321'
