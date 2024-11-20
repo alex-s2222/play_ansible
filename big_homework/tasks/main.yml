@@ -1,0 +1,5 @@
+---
+# tasks file for big_homework
+- name: Set hostname
+  ansible.builtin.include_tasks:
+    file: tasks/hostname.yml
