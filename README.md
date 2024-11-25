@@ -50,3 +50,14 @@ ansible-galaxy init play_with_docker
 #что бы применить изменения
 sudo netplan try
 ```
+ 
+8. network
+```
+# разрешить вход под root
+# PermitRootLogin yes
+sudo vi /etc/ssh/sshd_config 
+service ssh restart
+
+# Удалить ключ 2.
+vim ~/.ssh/authorized_keys
+```

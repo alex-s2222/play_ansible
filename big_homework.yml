@@ -1,0 +1,5 @@
+---
+- name: Setup
+  hosts: local
+  roles:
+    - big_homework
